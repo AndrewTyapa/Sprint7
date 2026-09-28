@@ -17,7 +17,6 @@ import org.junit.Test;
 import java.net.HttpURLConnection;
 
 import static api.endpoints.Endpoints.BASE_URL;
-import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
 
@@ -153,23 +152,4 @@ public class CourierClientTest {
                 .and()
                 .body("message", equalTo("Недостаточно данных для создания учетной записи"));
     }
-//    @Test
-//    public void checkUserName() {
-//        given()
-//                .auth().oauth2(bearerToken)
-//                .get("/api/users/me")
-//                .then().assertThat().body("data.name",equalTo("сюда впиши имя пользователя"));
-//    }
-//
-//    @Test
-//    public void checkUserNameAndPrintResponseBody() {
-//
-//        Response response =given().auth().oauth2(bearerToken).get("/api/users/me");
-//        // отправили запрос и сохранили ответ в переменную response - экземпляр класса Response
-//
-//        response.then().assertThat().body("data.name",equalTo("сюда впиши имя пользователя"));
-//        // проверили, что в теле ответа ключу name соответствует нужное имя пользователя
-//
-//        System.out.println(response.body().asString()); // вывели тело ответа на экран
-
 }
